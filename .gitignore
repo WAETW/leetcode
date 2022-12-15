@@ -35,3 +35,5 @@
 .vscode
 *.code-workspace
 .idea
+
+cmake-*
