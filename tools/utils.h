@@ -137,17 +137,24 @@ public:
         return parents[i];
     }
 
-    void join(int i, int j){
-        int pi = find(i);
-        int pj = find(j);
-        if(pi == pj)
+    void join(int u, int v){
+        int pu = find(u);
+        int pv = find(v);
+        if(pu == pv)
             return;
-        parents[pi] = parents[pj] = min(pi, pj);
+        parents[pu] = parents[pv] = min(pu, pv);
+    }
+
+    void printSet(){
+        for(int &i:parents){
+            cout<<i<<" ";
+        }
+        cout <<"\n";
     }
 
     DSU(int n){
         this->n = n;
-        parents = vector<int> (n);
+        parents.resize(n);
         iota(parents.begin(), parents.end(), 0);
     }
 };
