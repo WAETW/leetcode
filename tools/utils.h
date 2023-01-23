@@ -158,3 +158,11 @@ public:
         iota(parents.begin(), parents.end(), 0);
     }
 };
+
+template<typename T>
+void printVector(T t){
+    for(auto &a:t){
+        cout <<a<<", ";
+    }
+    cout <<"\n";
+}
